@@ -8,7 +8,7 @@
       "name": "codex-pro-skill",
       "source": {
         "source": "local",
-        "path": "./"
+        "path": "./plugins/codex-pro-skill"
       },
       "policy": {
         "installation": "AVAILABLE",
