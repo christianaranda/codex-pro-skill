@@ -26,7 +26,7 @@ tmp/
 temp/
 .cache/
 
-# Local Codex/agent runtime state. Keep the public marketplace file tracked.
+# Local Codex/agent runtime state.
 .codex/
 .agents/tmp/
 .agents/cache/

@@ -1,10 +1,10 @@
 # Codex Pro Skill
 
-This repository packages the `pro` Codex skill as a one-skill Codex plugin. The skill helps Codex send scoped, redacted context packets to Extended Pro through the Codex in-app browser, wait for the answer, and reconcile that answer against local files, PR state, diffs, tests, and repo conventions before acting.
+This repository packages the `pro` Codex skill for public installation. The skill helps Codex send scoped, redacted context packets to Extended Pro through the Codex in-app browser, wait for the answer, and reconcile that answer against local files, PR state, diffs, tests, and repo conventions before acting.
 
 ## Requirements
 
-- Codex with plugin and skill support.
+- Codex with skills support.
 - Browser Use / Codex in-app browser availability.
 - Access to the Pro or Extended Pro surface used by the skill.
 
@@ -12,21 +12,20 @@ Unsupported environments cannot run the core workflow because the skill explicit
 
 ## Install
 
-To make this plugin available in Codex, add this repository as a marketplace source:
+Recommended: ask Codex to install the skill with `$skill-installer`:
 
-```bash
-codex plugin marketplace add christianaranda/codex-pro-skill --ref v0.1.1
+```text
+Use $skill-installer to install https://github.com/christianaranda/codex-pro-skill/tree/v0.1.2/skills/pro
 ```
 
-This registers the `Codex Pro Skill` marketplace for your local Codex user on this machine. It does not publish anything globally and does not install the plugin by itself.
+Restart Codex after installation so the new skill is discovered.
 
-Then open Codex Desktop's Plugins page, select the `Codex Pro Skill` marketplace, and install `Pro Review Orchestration`.
+The installer places the skill under your Codex skills directory, typically `${CODEX_HOME}/skills/pro` when `CODEX_HOME` is set, or `~/.codex/skills/pro` otherwise.
 
-If you previously added `v0.1.0`, remove and re-add the marketplace so Codex uses the corrected package layout:
+To verify the install:
 
 ```bash
-codex plugin marketplace remove codex-pro-skill
-codex plugin marketplace add christianaranda/codex-pro-skill --ref v0.1.1
+test -f "${CODEX_HOME:-$HOME/.codex}/skills/pro/SKILL.md" && echo "pro skill installed"
 ```
 
 ## Usage
@@ -41,20 +40,17 @@ The skill supports plan hardening, implementation review, PR/code-review comment
 
 The skill instructs Codex to build scoped context packets and redact secrets, tokens, credentials, private customer data, and unrelated large files. It does not technically prevent disclosure. Anything included in the prompt sent to Pro/OpenAI may be processed by that service, so review context packets before submission and do not include secrets or unrelated private data.
 
-## Advanced
+## Manual Install
 
-For local testing from a clone:
-
-```bash
-codex plugin marketplace add /path/to/codex-pro-skill
-```
-
-For manual skill-only installation, copy only the skill folder:
+If you do not want to use `$skill-installer`, clone the repo and copy only the skill folder:
 
 ```bash
-mkdir -p "$HOME/.agents/skills"
-cp -R plugins/codex-pro-skill/skills/pro "$HOME/.agents/skills/pro"
+git clone --depth 1 --branch v0.1.2 https://github.com/christianaranda/codex-pro-skill.git
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+cp -R codex-pro-skill/skills/pro "${CODEX_HOME:-$HOME/.codex}/skills/pro"
 ```
+
+Restart Codex after copying the skill.
 
 ## Maintainers
 
