@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pro Review Orchestration"
+  short_description: "Send scoped repo reviews to Extended Pro"
+  default_prompt: "Use $pro to send a scoped repo context packet to Extended Pro and reconcile the answer against local state."

@@ -1,0 +1,20 @@
+{
+  "name": "codex-pro-skill",
+  "interface": {
+    "displayName": "Codex Pro Skill"
+  },
+  "plugins": [
+    {
+      "name": "codex-pro-skill",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

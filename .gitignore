@@ -1,0 +1,33 @@
+.DS_Store
+Thumbs.db
+
+# Local environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+secrets.*
+credentials.*
+
+# Dependency and build output
+node_modules/
+dist/
+build/
+coverage/
+
+# Logs and scratch output
+*.log
+logs/
+tmp/
+temp/
+.cache/
+
+# Local Codex/agent runtime state. Keep the public marketplace file tracked.
+.codex/
+.agents/tmp/
+.agents/cache/
+.agents/logs/

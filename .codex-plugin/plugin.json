@@ -1,0 +1,35 @@
+{
+  "name": "codex-pro-skill",
+  "version": "0.1.0",
+  "description": "Package the Pro Review Orchestration Codex skill for high-context Extended Pro reviews.",
+  "author": {
+    "name": "christianaranda",
+    "url": "https://github.com/christianaranda"
+  },
+  "homepage": "https://github.com/christianaranda/codex-pro-skill#readme",
+  "repository": "https://github.com/christianaranda/codex-pro-skill",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skill",
+    "pro",
+    "review"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Pro Review Orchestration",
+    "shortDescription": "Scope and reconcile Extended Pro reviews",
+    "longDescription": "A Codex skill for sending scoped, redacted context packets to Extended Pro through the Codex in-app browser, then reconciling feedback against local state before acting.",
+    "developerName": "christianaranda",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Review"
+    ],
+    "websiteURL": "https://github.com/christianaranda/codex-pro-skill",
+    "defaultPrompt": [
+      "Use $pro to review this plan before implementation.",
+      "Use $pro to review this implementation for ship readiness."
+    ]
+  }
+}
