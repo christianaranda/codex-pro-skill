@@ -26,4 +26,6 @@ trufflehog filesystem . --no-update --fail
 
 Also run any organization-specific regex scrub rules from a local pattern file, then inspect the file inventory manually for private repo names, branch names, issue links, internal URLs, screenshots, transcripts, logs, shell history, browser artifacts, or local Codex/agent scratch material.
 
+Document user-facing changes in `CHANGELOG.md` under `[Unreleased]` before release tagging.
+
 Do not add release or maintainer-only instructions to `skills/pro`; the installable skill folder should stay limited to the skill instructions and its UI metadata.

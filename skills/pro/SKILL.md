@@ -38,6 +38,10 @@ If the Browser Use tools are unavailable, say that the skill is blocked instead 
    - Use "Eval / Reporting Methodology" for metrics, comparability, reporting validity, and recommendation criteria.
 
 4. Submit through the Codex browser.
+   - Use a Pro thread specified by the user when provided.
+   - Otherwise prefer reusing the existing Pro thread for the same repo or workstream when it preserves useful context.
+   - Start a new Pro thread when the review target is unrelated, the prior thread is stale/noisy, or the user asks for a clean review.
+   - When reusing a thread, briefly restate the current decision, what changed since the last review, and which prior assumptions should still apply.
    - Open or reuse the Codex in-app browser.
    - Confirm Extended Pro in the visible model picker when possible.
    - Send the context packet and selected prompt.
