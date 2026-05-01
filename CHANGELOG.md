@@ -6,6 +6,8 @@ This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html),
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-05-01
+
 ### Added
 
 - Add Pro thread selection guidance: use a user-specified Pro thread when provided, otherwise reuse the relevant existing Pro thread when it preserves useful context, and start a clean thread when the prior context is unrelated or stale.

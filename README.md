@@ -7,7 +7,7 @@
 In Codex, ask:
 
 ```text
-Use $skill-installer to install https://github.com/christianaranda/codex-pro-skill/tree/v0.1.2/skills/pro
+Use $skill-installer to install https://github.com/christianaranda/codex-pro-skill/tree/v0.1.3/skills/pro
 ```
 
 Restart Codex after installation.
