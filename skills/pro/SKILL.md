@@ -9,14 +9,16 @@ Use this skill to ask Extended Pro for a scoped review, then verify and reconcil
 
 ## Non-Negotiables
 
-- Use the Codex in-app browser / Browser Use tools for the Pro interaction.
-- Do not use Computer Use, Playwright, or macOS `open` for the Pro interaction.
+- Use `$browser-use:browser` for the Pro interaction when it is available.
+- Before any Pro browser action, read and follow the Browser Use skill, initialize `browser-client` through the Node REPL with the `iab` backend, and interact with the Codex in-app browser through that runtime.
+- Do not use Computer Use, standalone Playwright MCP/browser sessions, shell-launched Playwright, macOS `open`, or any external browser automation path for the Pro interaction.
+- The only Playwright-style calls allowed are the `tab.playwright.*` APIs exposed by Browser Use after the `iab` runtime is initialized.
 - Prefer Extended Pro. Verify the visible model picker when possible.
 - Do not blindly accept Pro output. Compare it to current local files, live PR state, tests, and repo patterns.
 - If Pro raises architecture or product tradeoffs, ask the user before implementing those changes.
 - Preserve traceability by summarizing the Pro prompt and response in the thread. Save a temporary artifact only when it is useful for a long or high-stakes review.
 
-If the Browser Use tools are unavailable, say that the skill is blocked instead of substituting another browser mechanism.
+If Browser Use or its required Node REPL runtime is unavailable after following Browser Use troubleshooting, say that the skill is blocked instead of substituting another browser mechanism.
 
 ## Workflow
 
@@ -42,7 +44,7 @@ If the Browser Use tools are unavailable, say that the skill is blocked instead 
    - Otherwise prefer reusing the existing Pro thread for the same repo or workstream when it preserves useful context.
    - Start a new Pro thread when the review target is unrelated, the prior thread is stale/noisy, or the user asks for a clean review.
    - When reusing a thread, briefly restate the current decision, what changed since the last review, and which prior assumptions should still apply.
-   - Open or reuse the Codex in-app browser.
+   - Open or reuse the Codex in-app browser through Browser Use with the `iab` backend.
    - Confirm Extended Pro in the visible model picker when possible.
    - Send the context packet and selected prompt.
 

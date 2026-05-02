@@ -6,6 +6,10 @@ This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html),
 
 ## [Unreleased]
 
+### Changed
+
+- Clarify that Pro browser work must use `$browser-use:browser` with the in-app browser `iab` backend, not standalone Playwright or another browser automation path.
+
 ## [0.1.3] - 2026-05-01
 
 ### Added
